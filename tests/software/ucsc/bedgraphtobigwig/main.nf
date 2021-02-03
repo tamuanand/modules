@@ -7,8 +7,8 @@ include { UCSC_BEDGRAPHTOBIGWIG  } from '../../../../software/ucsc/bedgraphtobig
 workflow test_ucsc_bedgraphtobigwig {
     def input = []
     input = [ [ id:'test' ], // meta map
-              [ file('https://raw.githubusercontent.com/igvteam/igv.js/master/test/data/wig/bedgraph-example-uscs.bedgraph', checkIfExists: true) ] ]
-              
+            [ file('https://raw.githubusercontent.com/igvteam/igv.js/master/test/data/wig/bedgraph-example-uscs.bedgraph', checkIfExists: true) ] ]
+
     UCSC_BEDGRAPHTOBIGWIG (
         input,
         file('https://raw.githubusercontent.com/igvteam/igv.js/master/test/data/wig/chrom.sizes', checkIfExists: true)

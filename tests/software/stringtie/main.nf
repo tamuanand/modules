@@ -11,7 +11,7 @@ include { STRINGTIE as STRINGTIE_REVERSE } from '../../../software/stringtie/mai
 workflow test_stringtie_forward {
     def input = []
     input = [ [ id:'test', strandedness:'forward' ], // meta map
-              [ file("${launchDir}/tests/data/bam/test.paired_end.sorted.bam", checkIfExists: true) ] ]
+            [ file("${launchDir}/tests/data/bam/test.paired_end.sorted.bam", checkIfExists: true) ] ]
 
     STRINGTIE_FORWARD (
         input,
@@ -25,7 +25,7 @@ workflow test_stringtie_forward {
 workflow test_stringtie_reverse {
     def input = []
     input = [ [ id:'test', strandedness:'reverse' ], // meta map
-              [ file("${launchDir}/tests/data/bam/test.paired_end.sorted.bam", checkIfExists: true) ] ]
+            [ file("${launchDir}/tests/data/bam/test.paired_end.sorted.bam", checkIfExists: true) ] ]
 
     STRINGTIE_REVERSE (
         input,

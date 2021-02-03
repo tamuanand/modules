@@ -40,11 +40,11 @@ We have written a helper command in the `nf-core/tools` package that uses the Gi
     ```console
     $ nf-core modules list
 
-                                              ,--./,-.
-              ___     __   __   __   ___     /,-._.--~\
+                                            ,--./,-.
+            ___     __   __   __   ___     /,-._.--~\
         |\ | |__  __ /  ` /  \ |__) |__         }  {
         | \| |       \__, \__/ |  \ |___     \`-._,-`-,
-                                              `._,._,'
+                                            `._,._,'
 
         nf-core/tools version 1.10.2
 
@@ -67,11 +67,11 @@ We have written a helper command in the `nf-core/tools` package that uses the Gi
     ```console
     $ nf-core modules install . fastqc
 
-                                              ,--./,-.
-              ___     __   __   __   ___     /,-._.--~\
+                                            ,--./,-.
+            ___     __   __   __   ___     /,-._.--~\
         |\ | |__  __ /  ` /  \ |__) |__         }  {
         | \| |       \__, \__/ |  \ |___     \`-._,-`-,
-                                              `._,._,'
+                                            `._,._,'
 
         nf-core/tools version 1.10.2
 
@@ -99,11 +99,11 @@ We have written a helper command in the `nf-core/tools` package that uses the Gi
     ...truncated...
 
     Commands:
-      list     List available software modules.
-      install  Add a DSL2 software wrapper module to a pipeline.
-      update   Update one or all software wrapper modules.             (NOT YET IMPLEMENTED)
-      remove   Remove a software wrapper from a pipeline.              (NOT YET IMPLEMENTED)
-      check    Check that imported module code has not been modified.  (NOT YET IMPLEMENTED)
+    list     List available software modules.
+    install  Add a DSL2 software wrapper module to a pipeline.
+    update   Update one or all software wrapper modules.             (NOT YET IMPLEMENTED)
+    remove   Remove a software wrapper from a pipeline.              (NOT YET IMPLEMENTED)
+    check    Check that imported module code has not been modified.  (NOT YET IMPLEMENTED)
     ```
 
 ## Adding a new module file

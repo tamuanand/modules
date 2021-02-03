@@ -11,7 +11,7 @@ workflow test_bwa_mem_single_end {
 
     def input = []
     input = [ [ id:'test', single_end:true ], // meta map
-              [ file("${launchDir}/tests/data/fastq/dna/Ecoli_DNA_R1.fastq.gz", checkIfExists: true) ] ]
+            [ file("${launchDir}/tests/data/fastq/dna/Ecoli_DNA_R1.fastq.gz", checkIfExists: true) ] ]
 
     BWA_MEM (
         input,
@@ -27,7 +27,7 @@ workflow test_bwa_mem_paired_end {
 
     def input = []
     input = [ [ id:'test', single_end:false ], // meta map
-              [ file("${launchDir}/tests/data/fastq/dna/Ecoli_DNA_R1.fastq.gz", checkIfExists: true),
+            [ file("${launchDir}/tests/data/fastq/dna/Ecoli_DNA_R1.fastq.gz", checkIfExists: true),
                 file("${launchDir}/tests/data/fastq/dna/Ecoli_DNA_R2.fastq.gz", checkIfExists: true) ] ]
 
     BWA_MEM (
