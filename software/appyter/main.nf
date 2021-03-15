@@ -13,9 +13,9 @@ process APPYTER {
     // FIXME These rely on docker and won't work with conda
     // conda (params.enable_conda ? "bioconda::fastqc=0.11.9" : null)
     if (workflow.containerEngine == 'singularity' && !params.singularity_pull_docker_container) {
-        container "$options.appyter_image"
+        container "${params.appyter_image}"
     } else {
-        container "$options.appyter_image}"
+        container "${params.appyter_image}"
     }
 
     input:
