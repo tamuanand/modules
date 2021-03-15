@@ -1,3 +1,7 @@
+appyter:
+  - software/appyter/**
+  - tests/software/appyter/**
+
 bandage_image:
   - software/bandage/image/**
   - tests/software/bandage/image/**
