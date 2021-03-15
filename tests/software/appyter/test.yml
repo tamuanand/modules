@@ -1,0 +1,6 @@
+- name: appyter
+  command: nextflow run ./tests/software/appyter/ -entry test_appyter -c tests/config/nextflow.config
+  tags:
+    - appyter
+  files:
+    - path: ./output/appyter/output.ipynb
