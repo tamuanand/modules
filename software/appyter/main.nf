@@ -20,7 +20,7 @@ process APPYTER {
 
     input:
     path input_json
-    path input_files
+    path input_dir
 
     output:
     path "output.ipynb", emit: output_notebook
@@ -33,7 +33,7 @@ process APPYTER {
     """
     CURRENTWORK=`pwd`
     cp $input_json ~
-    cp $input_files ~
+    mv $input_dir ~
     cd ~
     appyter nbconstruct -i $input_json -o output.ipynb
     appyter nbexecute output.ipynb

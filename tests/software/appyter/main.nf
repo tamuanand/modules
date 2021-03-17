@@ -7,6 +7,6 @@ include { APPYTER } from '../../../software/appyter/main.nf' addParams( appyter_
 workflow test_appyter {
     def input = []
     input = file("${launchDir}/tests/software/appyter/input.json", checkIfExists: true)
-    input_file = file("${launchDir}/tests/software/appyter/test.txt", checkIfExists: true)
-    APPYTER ( input, input_file)
+    input_dir = file("${launchDir}/tests/software/appyter/input", checkIfExists: true)
+    APPYTER ( input, input_dir )
 }
