@@ -19,17 +19,24 @@ process APPYTER {
     }
 
     input:
-    path input
+    path input_json
+    path input_files
 
     output:
-    path "data/output.ipynb", emit: output_notebook
-    path  "*.version.txt"   , emit: version
+    path "output.ipynb", emit: output_notebook
+    // TODO path  "*.version.txt"   , emit: version
 
     script:
     // Add soft-links to original FastQs for consistent naming in pipeline
     def software = getSoftwareName(task.process)
 
     """
-    appyter nbconstruct -i $input -o data/output.ipynb
+    CURRENTWORK=`pwd`
+    cp $input_json ~
+    cp $input_files ~
+    cd ~
+    appyter nbconstruct -i $input_json -o output.ipynb
+    appyter nbexecute output.ipynb
+    cp output.ipynb \$CURRENTWORK
     """
 }
