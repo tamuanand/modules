@@ -56,16 +56,18 @@ jobs:
       - uses: actions/cache@v2
         id: cache-nextflow
         with:
-          path: /usr/local/bin/nextflow
+          path: nextflow
           key: ${{ runner.os }}-nextflow
 
       - name: Install Nextflow
         if: steps.cache-nextflow.outputs.cache-hit != 'true'
         env:
+          NXF_VER: ${{ matrix.nxf_version }}
           CAPSULE_LOG: none
-        run: |
-          wget -qO- get.nextflow.io | bash
-          sudo mv nextflow /usr/local/bin/
+        run: wget -qO- get.nextflow.io | bash
+
+      - name: Copy nextflow to bin
+        run: sudo cp nextflow /usr/local/bin/
 
       - name: Lint ${{ matrix.tags }}
         run: nf-core modules lint . -t ${{ matrix.tags }}
