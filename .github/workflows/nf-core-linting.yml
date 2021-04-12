@@ -60,6 +60,7 @@ jobs:
           key: ${{ runner.os }}-nextflow
 
       - name: Install Nextflow
+        if: steps.cache-nextflow.outputs.cache-hit != 'true'
         env:
           CAPSULE_LOG: none
         run: |
