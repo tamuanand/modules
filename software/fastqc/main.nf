@@ -26,6 +26,7 @@ process FASTQC {
     tuple val(meta), path("*.zip") , emit: zip
     path  "*.version.txt"          , emit: version
 
+
     script:
     // Add soft-links to original FastQs for consistent naming in pipeline
     def software = getSoftwareName(task.process)
